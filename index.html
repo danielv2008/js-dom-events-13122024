@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM Pamati</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        button { margin: 5px; padding: 10px; cursor: pointer; }
+        #content { margin-top: 20px; padding: 10px; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h1>JavaScript DOM Pamatu Piemērs</h1>
+    <p>Spied uz pogām lai manipulētu ar saturu!</p>
+
+
+    <button onclick="addText()">Pievienot tekstu</button>
+    <button onclick="changeText()">Mainīt tekstu</button>
+    <button onclick="deleteText()">Dzēst tekstu</button>
+
+ 
+    <div id="content">
+        <p id="mainText">Šis ir sākotnējais teksts.</p>
+    </div>
+
+ 
+    <script>
+        function addText() {
+            const contentDiv = document.getElementById("content");
+
+            const newText = document.createElement("p");
+            newText.textContent = "Šis ir jauns pievienots teksts!";
+
+            contentDiv.appendChild(newText);
+        }
+
+
+        function changeText() {
+            const mainText = document.getElementById("mainText");
+            mainText.textContent = "Teksts ir nomainīts!";
+        }
+
+       
+        function deleteText() {
+            const contentDiv = document.getElementById("content");
+
+
+            contentDiv.innerHTML = "";
+        }
+    </script>
+</body>
+</html>
